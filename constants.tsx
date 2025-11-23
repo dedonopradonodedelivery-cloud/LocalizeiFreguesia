@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Utensils, Briefcase, PartyPopper, Shirt, Coffee, Home, Dog, Armchair, Scissors, Heart, GraduationCap, Settings, Dumbbell, CarFront, Wrench, Sun, ShoppingCart, Croissant, Leaf, Beef, Fish, Bike, Beer, Sandwich, ShoppingBag, Sparkles, MapPin, Hand, Feather, Eye, Stethoscope, Smile, Brain, Activity, Apple, FlaskConical, HelpingHand, School, Languages, BookOpen, Baby, Target, Zap, Droplet, BrickWall, PaintRoller, Hammer, Wind, Key, Plug, Scale, Calculator, Ruler, Megaphone, Camera, Printer, Bone, Footprints, Flame, Swords, Trophy, Waves, Music, UserCheck, Tv, Smartphone, Laptop, Cpu, Snowflake } from 'lucide-react';
+import { Utensils, Briefcase, PartyPopper, Shirt, Coffee, Home, Dog, Armchair, Scissors, Heart, GraduationCap, Settings, Dumbbell, CarFront, Wrench, Sun, ShoppingCart, Croissant, Leaf, Beef, Fish, Bike, Beer, Sandwich, ShoppingBag, Sparkles, MapPin, Hand, Feather, Eye, Stethoscope, Smile, Brain, Activity, Apple, FlaskConical, HelpingHand, School, Languages, BookOpen, Baby, Target, Zap, Droplet, BrickWall, PaintRoller, Hammer, Wind, Key, Plug, Scale, Calculator, Ruler, Megaphone, Camera, Printer, Bone, Footprints, Flame, Swords, Trophy, Waves, Music, UserCheck, Tv, Smartphone, Laptop, Cpu, Snowflake, FileText, CircleDashed, Lock, Wallet, Gem, Watch, Moon, ShieldCheck, Package, Building2, Pill, Lightbulb, Palette } from 'lucide-react';
 import { AdType, Category, Store, Story, ServiceLead, Channel } from './types';
 
 export const CATEGORIES: Category[] = [
@@ -16,7 +17,7 @@ export const CATEGORIES: Category[] = [
   { id: '3', name: 'Festas', slug: 'party', icon: <PartyPopper className="w-6 h-6 text-primary-500" /> },
   { id: '4', name: 'Moda', slug: 'fashion', icon: <Shirt className="w-6 h-6 text-primary-500" /> },
   { id: '5', name: 'Mercados', slug: 'grocery', icon: <Coffee className="w-6 h-6 text-primary-500" /> },
-  { id: '6', name: 'Imóveis', slug: 'real-estate', icon: <Home className="w-6 h-6 text-primary-500" /> },
+  { id: '6', name: 'Condomínios', slug: 'condos', icon: <Building2 className="w-6 h-6 text-primary-500" /> },
   { id: '7', name: 'Pets', slug: 'pets', icon: <Dog className="w-6 h-6 text-primary-500" /> },
   { id: '8', name: 'Casa', slug: 'home-decor', icon: <Armchair className="w-6 h-6 text-primary-500" /> },
 ];
@@ -83,6 +84,17 @@ export const SUBCATEGORIES: Record<string, { name: string; icon: React.ReactNode
     { name: 'Dança', icon: <Music className="w-8 h-8 text-primary-600" /> },
     { name: 'Personal', icon: <UserCheck className="w-8 h-8 text-primary-600" /> },
   ],
+  'Autos': [
+    { name: 'Oficina Mecânica & Autoelétrica', icon: <Wrench className="w-8 h-8 text-primary-600" /> },
+    { name: 'Funilaria & Pintura', icon: <PaintRoller className="w-8 h-8 text-primary-600" /> },
+    { name: 'Lava-Jato & Estética Automotiva', icon: <Sparkles className="w-8 h-8 text-primary-600" /> },
+    { name: 'Pneus', icon: <CircleDashed className="w-8 h-8 text-primary-600" /> },
+    { name: 'Alinhamento & Suspensão', icon: <Activity className="w-8 h-8 text-primary-600" /> },
+    { name: 'Autopeças & Acessórios', icon: <Settings className="w-8 h-8 text-primary-600" /> },
+    { name: 'Vidro, Películas & Insulfilm', icon: <Sun className="w-8 h-8 text-primary-600" /> },
+    { name: 'Chaveiro automotivo', icon: <Key className="w-8 h-8 text-primary-600" /> },
+    { name: 'Documentão & Despachantes', icon: <FileText className="w-8 h-8 text-primary-600" /> },
+  ],
   'Profissionais': [
     { name: 'Advogados', icon: <Scale className="w-8 h-8 text-primary-600" /> },
     { name: 'Contadores', icon: <Calculator className="w-8 h-8 text-primary-600" /> },
@@ -94,13 +106,14 @@ export const SUBCATEGORIES: Record<string, { name: string; icon: React.ReactNode
     { name: 'Gráfica', icon: <Printer className="w-8 h-8 text-primary-600" /> },
   ],
   'Pets': [
-    { name: 'Pet shops', icon: <Bone className="w-8 h-8 text-primary-600" /> },
-    { name: 'Veterinárias', icon: <Stethoscope className="w-8 h-8 text-primary-600" /> },
-    { name: 'Banho e tosa', icon: <Scissors className="w-8 h-8 text-primary-600" /> },
-    { name: 'Adestradores', icon: <GraduationCap className="w-8 h-8 text-primary-600" /> },
-    { name: 'Creche e Hotel', icon: <Home className="w-8 h-8 text-primary-600" /> },
-    { name: 'Passeadores', icon: <Footprints className="w-8 h-8 text-primary-600" /> },
-    { name: 'Adoção', icon: <Heart className="w-8 h-8 text-primary-600" /> },
+    { name: 'Pet Shop & Acessórios', icon: <ShoppingBag className="w-8 h-8 text-primary-600" /> },
+    { name: 'Banho & Tosa', icon: <Scissors className="w-8 h-8 text-primary-600" /> },
+    { name: 'Veterinários & Clínicas', icon: <Stethoscope className="w-8 h-8 text-primary-600" /> },
+    { name: 'Hospedagem & Daycare', icon: <Home className="w-8 h-8 text-primary-600" /> },
+    { name: 'Adestramento', icon: <GraduationCap className="w-8 h-8 text-primary-600" /> },
+    { name: 'Farmácia Pet & Suplementos', icon: <Pill className="w-8 h-8 text-primary-600" /> },
+    { name: 'Alimentação Pet', icon: <Bone className="w-8 h-8 text-primary-600" /> },
+    { name: 'Serviços Especias', icon: <Sparkles className="w-8 h-8 text-primary-600" /> },
   ],
   'Assistências': [
     { name: 'TVs', icon: <Tv className="w-8 h-8 text-primary-600" /> },
@@ -111,6 +124,56 @@ export const SUBCATEGORIES: Record<string, { name: string; icon: React.ReactNode
     { name: 'Geladeira', icon: <Snowflake className="w-8 h-8 text-primary-600" /> },
     { name: 'Micro-ondas', icon: <Zap className="w-8 h-8 text-primary-600" /> },
     { name: 'Máquina de lavar', icon: <Waves className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Bem-estar': [
+    { name: 'Massoterapia & Relaxamento', icon: <Heart className="w-8 h-8 text-primary-600" /> },
+    { name: 'Fisioterapia & Reabilitação', icon: <Activity className="w-8 h-8 text-primary-600" /> },
+    { name: 'Estúdios de Pilates', icon: <Activity className="w-8 h-8 text-primary-600" /> },
+    { name: 'Clinicas de Estéticas', icon: <Sparkles className="w-8 h-8 text-primary-600" /> },
+    { name: 'Psicologia & Terapia', icon: <Brain className="w-8 h-8 text-primary-600" /> },
+    { name: 'Nutrição & Vida Saudável', icon: <Apple className="w-8 h-8 text-primary-600" /> },
+    { name: 'Yoga & meditação', icon: <Sun className="w-8 h-8 text-primary-600" /> },
+    { name: 'Spa, Day Spa & Terapia', icon: <Droplet className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Festas': [
+    { name: 'Decoração & Ambientação', icon: <Sparkles className="w-8 h-8 text-primary-600" /> },
+    { name: 'Buffet & Gastronomia', icon: <Utensils className="w-8 h-8 text-primary-600" /> },
+    { name: 'Salões & Espaços', icon: <Home className="w-8 h-8 text-primary-600" /> },
+    { name: 'Dj, Músicas & entretenimento', icon: <Music className="w-8 h-8 text-primary-600" /> },
+    { name: 'Aluguel de Equipamentos', icon: <Tv className="w-8 h-8 text-primary-600" /> },
+    { name: 'Fotografia & Filmagem', icon: <Camera className="w-8 h-8 text-primary-600" /> },
+    { name: 'Bolos, Doces & Personalizados', icon: <Croissant className="w-8 h-8 text-primary-600" /> },
+    { name: 'Personagens & animação', icon: <Smile className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Moda': [
+    { name: 'Moda Feminina', icon: <ShoppingBag className="w-8 h-8 text-primary-600" /> },
+    { name: 'Moda Masculina', icon: <Shirt className="w-8 h-8 text-primary-600" /> },
+    { name: 'Moda Infantil & Bebê', icon: <Baby className="w-8 h-8 text-primary-600" /> },
+    { name: 'Moda Praia & fitness', icon: <Sun className="w-8 h-8 text-primary-600" /> },
+    { name: 'Calçados', icon: <Footprints className="w-8 h-8 text-primary-600" /> },
+    { name: 'Acessórios & Bijuterias', icon: <Gem className="w-8 h-8 text-primary-600" /> },
+    { name: 'Joias & Relógios', icon: <Watch className="w-8 h-8 text-primary-600" /> },
+    { name: 'Moda Íntima & Sleepwear', icon: <Moon className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Condomínios': [
+    { name: 'Segurança Patrimonial', icon: <ShieldCheck className="w-8 h-8 text-primary-600" /> },
+    { name: 'Limpeza & conservação', icon: <Sparkles className="w-8 h-8 text-primary-600" /> },
+    { name: 'Manutenção Predial', icon: <Hammer className="w-8 h-8 text-primary-600" /> },
+    { name: 'Piscina & Guardião', icon: <Waves className="w-8 h-8 text-primary-600" /> },
+    { name: 'Jardinagem & Paisagismo', icon: <Leaf className="w-8 h-8 text-primary-600" /> },
+    { name: 'Fornecedores & Suprimentos', icon: <Package className="w-8 h-8 text-primary-600" /> },
+    { name: 'Administração de Condomínios', icon: <Building2 className="w-8 h-8 text-primary-600" /> },
+    { name: 'Portaria & controle de Acesso', icon: <UserCheck className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Casa': [
+    { name: 'Decoração & Design de Interiores', icon: <Palette className="w-8 h-8 text-primary-600" /> },
+    { name: 'Móveis & Planejados', icon: <Armchair className="w-8 h-8 text-primary-600" /> },
+    { name: 'Iluminação & elétrica', icon: <Lightbulb className="w-8 h-8 text-primary-600" /> },
+    { name: 'Hidráulica & Encanamento', icon: <Droplet className="w-8 h-8 text-primary-600" /> },
+    { name: 'Reforma & Construção', icon: <BrickWall className="w-8 h-8 text-primary-600" /> },
+    { name: 'Pintura & Acabamentos', icon: <PaintRoller className="w-8 h-8 text-primary-600" /> },
+    { name: 'Chaveiro Residencial', icon: <Key className="w-8 h-8 text-primary-600" /> },
+    { name: 'Limpeza Residencial & Diaristas', icon: <Sparkles className="w-8 h-8 text-primary-600" /> },
   ],
   // Fallback for others (generic)
   'default': [

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { CATEGORIES, STORES } from '../constants';
 import { AdType, Category } from '../types';
@@ -138,7 +139,7 @@ export const HomeFeed: React.FC<HomeFeedProps> = ({ onNavigate, onSelectCategory
             <div className="px-5">
                 <div className="w-full h-48 rounded-3xl overflow-hidden relative shadow-lg group cursor-pointer">
                     <img 
-                        src="https://picsum.photos/600/300?random=99" 
+                        src="https://nyneuuvcdmtqjyaqrztz.supabase.co/storage/v1/object/public/Banners%20Home/Rio%20Phone%20Store%20-%20Novo%20Design.png" 
                         alt="Featured Store" 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                     />
