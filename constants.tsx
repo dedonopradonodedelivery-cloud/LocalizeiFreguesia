@@ -1,0 +1,210 @@
+import React from 'react';
+import { Utensils, Briefcase, PartyPopper, Shirt, Coffee, Home, Dog, Armchair, Scissors, Heart, GraduationCap, Settings, Dumbbell, CarFront, Wrench, Sun, ShoppingCart, Croissant, Leaf, Beef, Fish, Bike, Beer, Sandwich, ShoppingBag, Sparkles, MapPin, Hand, Feather, Eye, Stethoscope, Smile, Brain, Activity, Apple, FlaskConical, HelpingHand, School, Languages, BookOpen, Baby, Target, Zap, Droplet, BrickWall, PaintRoller, Hammer, Wind, Key, Plug, Scale, Calculator, Ruler, Megaphone, Camera, Printer, Bone, Footprints, Flame, Swords, Trophy, Waves, Music, UserCheck, Tv, Smartphone, Laptop, Cpu, Snowflake } from 'lucide-react';
+import { AdType, Category, Store, Story, ServiceLead, Channel } from './types';
+
+export const CATEGORIES: Category[] = [
+  { id: '1', name: 'Alimentação', slug: 'food', icon: <Utensils className="w-6 h-6 text-primary-500" /> },
+  { id: 'new-1', name: 'Beleza', slug: 'beauty', icon: <Scissors className="w-6 h-6 text-primary-500" /> },
+  { id: 'new-2', name: 'Saúde', slug: 'health', icon: <Heart className="w-6 h-6 text-primary-500" /> },
+  { id: 'new-3', name: 'Educação', slug: 'education', icon: <GraduationCap className="w-6 h-6 text-primary-500" /> },
+  { id: 'new-4', name: 'Serviços', slug: 'services', icon: <Settings className="w-6 h-6 text-primary-500" /> },
+  { id: 'new-5', name: 'Esportes', slug: 'sports', icon: <Dumbbell className="w-6 h-6 text-primary-500" /> },
+  { id: 'new-6', name: 'Autos', slug: 'autos', icon: <CarFront className="w-6 h-6 text-primary-500" /> },
+  { id: 'new-7', name: 'Assistências', slug: 'assistance', icon: <Wrench className="w-6 h-6 text-primary-500" /> },
+  { id: 'new-8', name: 'Bem-estar', slug: 'wellness', icon: <Sun className="w-6 h-6 text-primary-500" /> },
+  { id: '2', name: 'Profissionais', slug: 'pros', icon: <Briefcase className="w-6 h-6 text-primary-500" /> },
+  { id: '3', name: 'Festas', slug: 'party', icon: <PartyPopper className="w-6 h-6 text-primary-500" /> },
+  { id: '4', name: 'Moda', slug: 'fashion', icon: <Shirt className="w-6 h-6 text-primary-500" /> },
+  { id: '5', name: 'Mercados', slug: 'grocery', icon: <Coffee className="w-6 h-6 text-primary-500" /> },
+  { id: '6', name: 'Imóveis', slug: 'real-estate', icon: <Home className="w-6 h-6 text-primary-500" /> },
+  { id: '7', name: 'Pets', slug: 'pets', icon: <Dog className="w-6 h-6 text-primary-500" /> },
+  { id: '8', name: 'Casa', slug: 'home-decor', icon: <Armchair className="w-6 h-6 text-primary-500" /> },
+];
+
+// Subcategories Map for the Detail View
+export const SUBCATEGORIES: Record<string, { name: string; icon: React.ReactNode }[]> = {
+  'Alimentação': [
+    { name: 'Restaurantes', icon: <Utensils className="w-8 h-8 text-primary-600" /> },
+    { name: 'Mercado', icon: <ShoppingCart className="w-8 h-8 text-primary-600" /> },
+    { name: 'Padaria', icon: <Croissant className="w-8 h-8 text-primary-600" /> },
+    { name: 'Hortifruti', icon: <Leaf className="w-8 h-8 text-primary-600" /> },
+    { name: 'Cafés', icon: <Coffee className="w-8 h-8 text-primary-600" /> },
+    { name: 'Açougue', icon: <Beef className="w-8 h-8 text-primary-600" /> },
+    { name: 'Peixaria', icon: <Fish className="w-8 h-8 text-primary-600" /> },
+    { name: 'Delivery', icon: <Bike className="w-8 h-8 text-primary-600" /> },
+    { name: 'Depósito de Bebidas', icon: <Beer className="w-8 h-8 text-primary-600" /> },
+    { name: 'Lanchonetes', icon: <Sandwich className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Beleza': [
+    { name: 'Salões', icon: <Scissors className="w-8 h-8 text-primary-600" /> },
+    { name: 'Barbearias', icon: <Scissors className="w-8 h-8 text-primary-600" /> },
+    { name: 'Manicure', icon: <Hand className="w-8 h-8 text-primary-600" /> },
+    { name: 'Depilação', icon: <Feather className="w-8 h-8 text-primary-600" /> },
+    { name: 'Estética', icon: <Sparkles className="w-8 h-8 text-primary-600" /> },
+    { name: 'Massoterapeuta', icon: <Heart className="w-8 h-8 text-primary-600" /> },
+    { name: 'Sobrancelha', icon: <Eye className="w-8 h-8 text-primary-600" /> },
+    { name: 'Bronzeamento', icon: <Sun className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Saúde': [
+    { name: 'Clínicas médicas', icon: <Stethoscope className="w-8 h-8 text-primary-600" /> },
+    { name: 'Dentistas', icon: <Smile className="w-8 h-8 text-primary-600" /> },
+    { name: 'Psicólogos', icon: <Brain className="w-8 h-8 text-primary-600" /> },
+    { name: 'Fisioterapeutas', icon: <Activity className="w-8 h-8 text-primary-600" /> },
+    { name: 'Nutricionistas', icon: <Apple className="w-8 h-8 text-primary-600" /> },
+    { name: 'Pilates', icon: <Activity className="w-8 h-8 text-primary-600" /> },
+    { name: 'Laboratório', icon: <FlaskConical className="w-8 h-8 text-primary-600" /> },
+    { name: 'Quiropraxia', icon: <HelpingHand className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Educação': [
+    { name: 'Escolas', icon: <School className="w-8 h-8 text-primary-600" /> },
+    { name: 'Idiomas', icon: <Languages className="w-8 h-8 text-primary-600" /> },
+    { name: 'Reforço escolar', icon: <BookOpen className="w-8 h-8 text-primary-600" /> },
+    { name: 'Creches', icon: <Baby className="w-8 h-8 text-primary-600" /> },
+    { name: 'Curso profissionalizantes', icon: <Briefcase className="w-8 h-8 text-primary-600" /> },
+    { name: 'Preparatórios', icon: <Target className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Serviços': [
+    { name: 'Eletricistas', icon: <Zap className="w-8 h-8 text-primary-600" /> },
+    { name: 'Encanadores', icon: <Droplet className="w-8 h-8 text-primary-600" /> },
+    { name: 'Pedreiros', icon: <BrickWall className="w-8 h-8 text-primary-600" /> },
+    { name: 'Pintores', icon: <PaintRoller className="w-8 h-8 text-primary-600" /> },
+    { name: 'Marceneiro', icon: <Hammer className="w-8 h-8 text-primary-600" /> },
+    { name: 'Serralheiros', icon: <Key className="w-8 h-8 text-primary-600" /> },
+    { name: 'Diaristas', icon: <Sparkles className="w-8 h-8 text-primary-600" /> },
+    { name: 'Eletro domestico', icon: <Plug className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Esportes': [
+    { name: 'Academias', icon: <Dumbbell className="w-8 h-8 text-primary-600" /> },
+    { name: 'Crossfit', icon: <Flame className="w-8 h-8 text-primary-600" /> },
+    { name: 'Funcional', icon: <Activity className="w-8 h-8 text-primary-600" /> },
+    { name: 'Artes marciais', icon: <Swords className="w-8 h-8 text-primary-600" /> },
+    { name: 'Quadras', icon: <Trophy className="w-8 h-8 text-primary-600" /> },
+    { name: 'Natação', icon: <Waves className="w-8 h-8 text-primary-600" /> },
+    { name: 'Dança', icon: <Music className="w-8 h-8 text-primary-600" /> },
+    { name: 'Personal', icon: <UserCheck className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Profissionais': [
+    { name: 'Advogados', icon: <Scale className="w-8 h-8 text-primary-600" /> },
+    { name: 'Contadores', icon: <Calculator className="w-8 h-8 text-primary-600" /> },
+    { name: 'Corretores', icon: <Key className="w-8 h-8 text-primary-600" /> },
+    { name: 'Consultores', icon: <Briefcase className="w-8 h-8 text-primary-600" /> },
+    { name: 'Arquitetos', icon: <Ruler className="w-8 h-8 text-primary-600" /> },
+    { name: 'Marketing', icon: <Megaphone className="w-8 h-8 text-primary-600" /> },
+    { name: 'Fotógrafo', icon: <Camera className="w-8 h-8 text-primary-600" /> },
+    { name: 'Gráfica', icon: <Printer className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Pets': [
+    { name: 'Pet shops', icon: <Bone className="w-8 h-8 text-primary-600" /> },
+    { name: 'Veterinárias', icon: <Stethoscope className="w-8 h-8 text-primary-600" /> },
+    { name: 'Banho e tosa', icon: <Scissors className="w-8 h-8 text-primary-600" /> },
+    { name: 'Adestradores', icon: <GraduationCap className="w-8 h-8 text-primary-600" /> },
+    { name: 'Creche e Hotel', icon: <Home className="w-8 h-8 text-primary-600" /> },
+    { name: 'Passeadores', icon: <Footprints className="w-8 h-8 text-primary-600" /> },
+    { name: 'Adoção', icon: <Heart className="w-8 h-8 text-primary-600" /> },
+  ],
+  'Assistências': [
+    { name: 'TVs', icon: <Tv className="w-8 h-8 text-primary-600" /> },
+    { name: 'Celulares', icon: <Smartphone className="w-8 h-8 text-primary-600" /> },
+    { name: 'Informática', icon: <Laptop className="w-8 h-8 text-primary-600" /> },
+    { name: 'Eletrônicos', icon: <Cpu className="w-8 h-8 text-primary-600" /> },
+    { name: 'Ar-condicionado', icon: <Wind className="w-8 h-8 text-primary-600" /> },
+    { name: 'Geladeira', icon: <Snowflake className="w-8 h-8 text-primary-600" /> },
+    { name: 'Micro-ondas', icon: <Zap className="w-8 h-8 text-primary-600" /> },
+    { name: 'Máquina de lavar', icon: <Waves className="w-8 h-8 text-primary-600" /> },
+  ],
+  // Fallback for others (generic)
+  'default': [
+    { name: 'Geral', icon: <Briefcase className="w-8 h-8 text-primary-600" /> },
+    { name: 'Ofertas', icon: <ShoppingBag className="w-8 h-8 text-primary-600" /> },
+    { name: 'Novidades', icon: <Sparkles className="w-8 h-8 text-primary-600" /> },
+    { name: 'Próximos', icon: <MapPin className="w-8 h-8 text-primary-600" /> },
+  ]
+};
+
+export const STORIES: Story[] = [
+  { id: '1', name: 'Mercado ...', image: 'https://picsum.photos/100/100?random=1' },
+  { id: '2', name: 'Empório d...', image: 'https://picsum.photos/100/100?random=2', isLive: true },
+  { id: '3', name: 'Padaria P...', image: 'https://picsum.photos/100/100?random=3' },
+  { id: '4', name: 'Açougue ...', image: 'https://picsum.photos/100/100?random=4' },
+  { id: '5', name: 'Hortifru...', image: 'https://picsum.photos/100/100?random=5' },
+  { id: '6', name: 'Farmácia...', image: 'https://picsum.photos/100/100?random=6' },
+];
+
+export const CHANNELS: Channel[] = [
+  { id: '1', name: 'ME COZINHA...', image: 'https://picsum.photos/100/100?random=10', followers: '14 mil', verified: false },
+  { id: '2', name: 'PENTEADOS 🇧🇷', image: 'https://picsum.photos/100/100?random=11', followers: '134 mil', verified: false },
+  { id: '3', name: 'SOBREMESAS 🍰', image: 'https://picsum.photos/100/100?random=12', followers: '35 mil', verified: false },
+  { id: '4', name: 'LATAM Airlines Ofert...', image: 'https://picsum.photos/100/100?random=13', followers: '47 mil', verified: true },
+];
+
+// Contains a mix of Premium (Top), Local, and Organic stores
+export const STORES: Store[] = [
+  {
+    id: 'premium-1',
+    name: 'Casas Pedro',
+    category: 'Alimentos',
+    image: 'https://picsum.photos/400/250?random=10',
+    rating: 4.9,
+    distance: '0.5km',
+    adType: AdType.PREMIUM,
+    description: 'A maior variedade de grãos e especiarias da Freguesia.',
+    cashback: 5,
+    isMarketplace: true,
+    price: 49.90
+  },
+  {
+    id: 'premium-2',
+    name: 'Hamburgueria Brasa',
+    category: 'Alimentação',
+    image: 'https://picsum.photos/400/250?random=11',
+    rating: 4.8,
+    distance: '1.2km',
+    adType: AdType.PREMIUM,
+    description: 'O melhor burger artesanal do bairro.',
+    cashback: 3,
+    isMarketplace: true,
+    price: 32.50
+  },
+  {
+    id: 'local-1',
+    name: 'Ótica Visão',
+    category: 'Moda',
+    image: 'https://picsum.photos/400/250?random=12',
+    rating: 4.5,
+    distance: '0.3km',
+    adType: AdType.LOCAL,
+    description: 'Óculos de sol e grau com preço justo.',
+    cashback: 2,
+    isMarketplace: true,
+    price: 199.00
+  },
+  {
+    id: 'organic-1',
+    name: 'PetShop Amigo Fiel',
+    category: 'Pets',
+    image: 'https://picsum.photos/400/250?random=13',
+    rating: 4.2,
+    distance: '2.0km',
+    adType: AdType.ORGANIC,
+    description: 'Banho e tosa com carinho.',
+    isMarketplace: false
+  },
+  {
+    id: 'organic-2',
+    name: 'Padaria Estrela',
+    category: 'Alimentação',
+    image: 'https://picsum.photos/400/250?random=14',
+    rating: 4.6,
+    distance: '0.8km',
+    adType: AdType.ORGANIC,
+    description: 'Pão quente toda hora.',
+    isMarketplace: true,
+    price: 12.00
+  }
+];
+
+export const LEADS: ServiceLead[] = [
+  { id: '1', title: 'Instalação de Ar Condicionado', category: 'Climatização', urgency: 'Alta', priceToUnlock: 3.90, maskedName: 'Carlos M.', district: 'Freguesia' },
+  { id: '2', title: 'Bolo de Aniversário (3kg)', category: 'Festas', urgency: 'Média', priceToUnlock: 3.90, maskedName: 'Ana P.', district: 'Pechincha' },
+  { id: '3', title: 'Troca de Fiação Elétrica', category: 'Eletricista', urgency: 'Alta', priceToUnlock: 3.90, maskedName: 'Roberto S.', district: 'Freguesia' },
+];
