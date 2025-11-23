@@ -78,4 +78,71 @@ const App: React.FC = () => {
           </div>
 
           <div className="text-[10px] text-primary-200/80 uppercase tracking-[0.25em] font-medium flex items-center gap-1">
-            <
+            <Crown className="w-3 h-3 text-amber-300" />
+            <span>Powered by Localizei Freguesia</span>
+          </div>
+        </div>
+
+      </div>
+    );
+  }
+
+  // --------------------------------------------------------
+  // ⚡ APP WRAPPER (DESKTOP + MOBILE)
+  // --------------------------------------------------------
+  return (
+    <>
+      <div className={isDarkMode ? 'dark' : ''}>
+        <div className="min-h-screen bg-slate-900 flex justify-center md:items-center">
+
+          {/* 📌 DESKTOP WRAPPER (Centraliza o “app de celular”) */}
+          <div className="
+            w-full 
+            max-w-md 
+            md:h-[calc(100vh-2rem)]
+            bg-gray-50 
+            dark:bg-gray-950 
+            transition-colors 
+            duration-300 
+            pb-24 
+            md:rounded-3xl 
+            md:shadow-2xl 
+            md:overflow-hidden 
+            md:border 
+            md:border-slate-800
+          ">
+
+            <Header
+              isDarkMode={isDarkMode}
+              toggleTheme={toggleTheme}
+              onAuthClick={() => setIsAuthOpen(true)}
+              user={user}
+            />
+
+            <Layout activeTab={activeTab} setActiveTab={setActiveTab}>
+              {activeTab === 'home' && (
+                <HomeFeed onSelectCategory={handleSelectCategory} />
+              )}
+              {activeTab === 'explore' && (
+                <ExploreView onSelectCategory={handleSelectCategory} />
+              )}
+              {activeTab === 'status' && <StatusView />}
+              {activeTab === 'marketplace' && <MarketplaceView />}
+              {activeTab === 'category_detail' && selectedCategory && (
+                <CategoryView
+                  category={selectedCategory}
+                  onBack={() => setActiveTab('home')}
+                />
+              )}
+            </Layout>
+
+          </div>
+        </div>
+      </div>
+
+      <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
+    </>
+  );
+};
+
+export default App;
