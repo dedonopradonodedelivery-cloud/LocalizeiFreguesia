@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { User } from 'firebase/auth';
 import { useProfile } from '../hooks/useProfile';
 import { User as UserIcon, Smartphone, ChevronRight, CheckCircle2 } from 'lucide-react';
@@ -11,19 +10,16 @@ interface QuickRegisterProps {
 
 export const QuickRegister: React.FC<QuickRegisterProps> = ({ user, onComplete }) => {
   const { saveProfile, isSaving, error } = useProfile();
-  
+
   const [name, setName] = useState(user.displayName || '');
   const [phone, setPhone] = useState('');
-  
-  // Custom Orange color matching the brand
+
   const BRAND_ORANGE = '#FF6501';
 
-  // Apply phone mask (XX) XXXXX-XXXX
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+    let value = e.target.value.replace(/\D/g, '');
     if (value.length > 11) value = value.slice(0, 11);
 
-    // Mask logic
     if (value.length > 10) {
       value = value.replace(/^(\d\d)(\d{5})(\d{4}).*/, '($1) $2-$3');
     } else if (value.length > 5) {
@@ -33,14 +29,13 @@ export const QuickRegister: React.FC<QuickRegisterProps> = ({ user, onComplete }
     } else {
       value = value.replace(/^(\d*)/, '($1');
     }
-    
+
     setPhone(value);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
+
     const rawPhone = phone.replace(/\D/g, '');
     if (rawPhone.length < 10) {
       alert("Por favor, digite um telefone válido.");
@@ -67,8 +62,6 @@ export const QuickRegister: React.FC<QuickRegisterProps> = ({ user, onComplete }
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 animate-in fade-in duration-500 font-sans">
-      
-      {/* Progress / Step Indicator */}
       <div className="w-full max-w-sm flex items-center justify-center gap-2 mb-10 opacity-50">
         <div className="w-2 h-2 rounded-full bg-gray-300"></div>
         <div className="w-2 h-2 rounded-full bg-gray-300"></div>
@@ -76,7 +69,6 @@ export const QuickRegister: React.FC<QuickRegisterProps> = ({ user, onComplete }
       </div>
 
       <div className="w-full max-w-sm">
-        {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2 tracking-tight">Quase lá!</h1>
           <p className="text-gray-500 text-sm">
@@ -84,7 +76,6 @@ export const QuickRegister: React.FC<QuickRegisterProps> = ({ user, onComplete }
           </p>
         </div>
 
-        {/* Avatar Preview */}
         <div className="flex justify-center mb-8">
           <div className="relative">
             <div className="w-28 h-28 rounded-full bg-gray-100 p-1 shadow-lg shadow-orange-100 border-2 border-white">
@@ -102,18 +93,15 @@ export const QuickRegister: React.FC<QuickRegisterProps> = ({ user, onComplete }
           </div>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-5">
-          
-          {/* Name Input */}
           <div className="group">
             <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1.5 ml-1">
               Nome Completo
             </label>
             <div className="relative flex items-center">
               <UserIcon className="absolute left-4 w-5 h-5 text-gray-400 group-focus-within:text-[#FF6501] transition-colors" />
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Ex: João da Silva"
@@ -123,15 +111,14 @@ export const QuickRegister: React.FC<QuickRegisterProps> = ({ user, onComplete }
             </div>
           </div>
 
-          {/* Phone Input */}
           <div className="group">
             <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-1.5 ml-1">
               WhatsApp / Celular
             </label>
             <div className="relative flex items-center">
               <Smartphone className="absolute left-4 w-5 h-5 text-gray-400 group-focus-within:text-[#FF6501] transition-colors" />
-              <input 
-                type="tel" 
+              <input
+                type="tel"
                 value={phone}
                 onChange={handlePhoneChange}
                 placeholder="(21) 99999-9999"
@@ -148,8 +135,7 @@ export const QuickRegister: React.FC<QuickRegisterProps> = ({ user, onComplete }
             </div>
           )}
 
-          {/* Action Button */}
-          <button 
+          <button
             type="submit"
             disabled={isSaving}
             style={{ backgroundColor: BRAND_ORANGE }}
@@ -165,13 +151,6 @@ export const QuickRegister: React.FC<QuickRegisterProps> = ({ user, onComplete }
             )}
           </button>
         </form>
-        
+
         <div className="mt-8 text-center">
-            <p className="text-xs text-gray-400">
-                Seus dados estão protegidos.
-            </p>
-        </div>
-      </div>
-    </div>
-  );
-};
+          <p className="text-
