@@ -153,4 +153,11 @@ export const QuickRegister: React.FC<QuickRegisterProps> = ({ user, onComplete }
         </form>
 
         <div className="mt-8 text-center">
-          <p className="text-
+          <p className="text-xs text-gray-400">
+            Seus dados serão usados apenas para contato e para que você receba seu cashback na Localizei Freguesia.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
